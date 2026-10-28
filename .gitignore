@@ -1,0 +1,26 @@
+# ============================================================================
+# VITERM PUBLIC SHOWCASE .GITIGNORE (ZERO SOURCE CODE / ZERO SECRETS LEAKAGE)
+# ============================================================================
+
+# Never commit internal source code or backend server code to the public showcase repo
+src/
+src-tauri/
+dist/
+server-license/
+web/
+node_modules/
+target/
+*.rs
+*.go
+*.php
+*.sql
+
+# Never commit environment variables, credentials, or private keys
+.env
+.env.*
+*.pem
+*.key
+*.pub
+*.ppk
+*.pfx
+viterm_data.json
