@@ -5,9 +5,9 @@
 
   <p>
     <img src="https://img.shields.io/badge/Version-2.5.0%20Enterprise-0A84FF?style=for-the-badge" alt="Version" />
-    <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-30D158?style=for-the-badge" alt="Platform" />
+    <img src="https://img.shields.io/badge/Platform-Windows%20x64-30D158?style=for-the-badge" alt="Platform" />
     <img src="https://img.shields.io/badge/Engine-Tauri%20v2%20%2B%20Rust%20SSH2-FF9F0A?style=for-the-badge" alt="Engine" />
-    <img src="https://img.shields.io/badge/Security-AES--256--GCM%20Zero--Trust-BF5AF2?style=for-the-badge" alt="Security" />
+    <img src="https://img.shields.io/badge/Security-AES--256--GCM-BF5AF2?style=for-the-badge" alt="Security" />
   </p>
 
   <p>
@@ -27,7 +27,7 @@
 **viTerm** là không gian làm việc hạ tầng đám mây (SSH, SFTP, Port Forwarding, Keychain & AI DevOps Copilot) được thiết kế tối giản theo chuẩn **Apple Human Interface Guidelines (macOS Sequoia Dark & Apple Keynote Light)**.
 
 > **Lưu ý về Kho lưu trữ (Official Public Showcase Repository)**:
-> Đây là kho lưu trữ giới thiệu sản phẩm, tài liệu hướng dẫn, theo dõi lỗi (Issues) và phát hành bản cài đặt chính thức (`.msi` / `.exe` / `.dmg` / `.AppImage`) của **viTerm**. Để đảm bảo an toàn bảo mật cấp doanh nghiệp (Zero-Trust), mã nguồn lõi và cấu hình máy chủ nội bộ được bảo vệ riêng biệt.
+> Đây là kho lưu trữ giới thiệu sản phẩm, tài liệu hướng dẫn, theo dõi lỗi (Issues) và phát hành bản cài đặt chính thức (`.msi` / `.exe` / `.dmg` / `.AppImage`) của **viTerm**. Mã nguồn lõi và cấu hình máy chủ nội bộ được lưu riêng; repo này dùng cho tài liệu, Issues và bản phát hành.
 
 ---
 
@@ -79,7 +79,7 @@
 | Lớp bảo vệ | Cơ chế kỹ thuật |
 | :--- | :--- |
 | **Mã hóa Local Vault & Cloud Sync** | Toàn bộ mật khẩu SSH, Private Key và cấu hình VPS được mã hóa chuẩn **AES-256-GCM** kết hợp dẫn xuất khóa **PBKDF2-HMAC-SHA256 (100.000 vòng)**. |
-| **Xác thực Single Sign-On (SSO)** | Đăng nhập tập trung qua giao thức **OAuth2 PKCE** kèm xác thực đa yếu tố (**2FA TOTP** & **OTP Thiết bị mới**). |
+| **Xác thực CM Studio SSO** | Đăng nhập trực tiếp bằng Username/Email và mật khẩu trong viTerm, hỗ trợ **2FA TOTP** và **OTP thiết bị mới**. Luồng popup đăng nhập SSO đã được bỏ. |
 | **Zeroize Khóa tạm tức thì** | Mọi khóa tạm phục vụ kết nối đều được khóa quyền truy cập cá nhân (`0600` / Windows `icacls`) và ghi đè `0x00` trước khi hủy ngay sau khi xác thực. |
 | **Kiểm tra Host Key SHA-256** | Tích hợp công cụ quét dấu vân tay máy chủ (`SHA-256 Fingerprint Scanner`) và trình quản lý `Known Hosts` chống tấn công Man-in-the-Middle. |
 
@@ -87,17 +87,37 @@
 
 ## 📦 Tải xuống & Cài đặt
 
-Bạn có thể tải bản cài đặt mới nhất tại mục **[Releases](../../releases)**:
+Bản Windows **viTerm 2.5.0 — x64** gồm hai bộ cài:
 
-- **Windows 10 / 11 (64-bit)**: `viTerm_2.5.0_x64-setup.exe` (NSIS) hoặc `viTerm_2.5.0_x64_en-US.msi`
-- **macOS (Apple Silicon & Intel)**: `viTerm_2.5.0_universal.dmg`
-- **Linux (Ubuntu / Debian / Fedora)**: `viTerm_2.5.0_amd64.deb` / `viTerm_2.5.0_amd64.AppImage`
+| Định dạng | Tên tệp | Cách sử dụng |
+| :--- | :--- | :--- |
+| EXE (NSIS) | `viTerm_2.5.0_x64-setup.exe` | Cài đặt qua trình hướng dẫn. |
+| MSI | `viTerm_2.5.0_x64_en-US.msi` | Cài đặt bằng Windows Installer. |
+
+Tìm tệp đính kèm của bản **v2.5.0** trong **[Releases](https://github.com/chuongminhofficial/viTerm/releases)**. Nếu chưa thấy tệp, bộ cài chưa được tải lên release. Chọn một trong hai định dạng để cài cùng phiên bản ứng dụng.
+
+1. Tải bộ cài phù hợp về máy Windows x64.
+2. Chạy bộ cài và mở viTerm.
+3. Đăng nhập trực tiếp với tài khoản CM Studio SSO nếu cần dùng tính năng cloud.
+4. Sau khi kích hoạt key hoặc quản trị thay đổi license, đăng xuất và đăng nhập lại để nhận quyền/thời hạn mới.
+
+**macOS / Linux:** chưa có bộ cài được cung cấp trong đợt phát hành này.
+
+### Thay đổi về tài khoản và Cloud
+
+- Đăng nhập trực tiếp CM Studio SSO trong ứng dụng; giữ bước xác minh 2FA/OTP khi được yêu cầu.
+- Đã bỏ nút **SYNC** và **Đồng bộ ngay**. Tùy chọn lưu host lên cloud và tải danh sách khi đăng nhập vẫn được giữ.
+- Thay đổi khóa/gia hạn license áp dụng ở lần đăng nhập tiếp theo. Phiên hiện tại giữ quyền và thời hạn đã nhận lúc đăng nhập.
+- License đã kích hoạt cho cùng tài khoản không trừ thêm lượt khi gửi lại cùng key.
+
 
 ---
 
 ## 🌐 English Overview
 
-**viTerm** is an Apple-crafted SSH, Dual-Pane SFTP, 2×2 Split Terminal, and AI DevOps Copilot desktop application built with **Tauri v2 (Rust)** and **xterm.js**.
+**viTerm** is an SSH, Dual-Pane SFTP, split terminal, and AI DevOps workspace built with **Tauri v2 (Rust)** and **xterm.js**.
+
+The current release package targets **Windows x64**, with NSIS EXE and MSI installers. Sign in directly with CM Studio SSO; license changes take effect after signing out and back in. macOS and Linux installers are not included in this release.
 
 - **2×2 Split Terminal & Broadcast Input**: Run up to 4 concurrent SSH or Local PTY sessions with live theme switching and smart `Ctrl + Click` URL detection.
 - **AI Terminal Agent**: Connect **Ollama Local**, **Google Gemini**, **OpenAI**, **OpenRouter**, **Groq**, **DeepSeek**, or **Claude** with 1-Click Model Scanning, Auto-Pilot execution, and Safe-Guard protection.

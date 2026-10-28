@@ -24,3 +24,12 @@ target/
 *.ppk
 *.pfx
 viterm_data.json
+
+# Installer assets belong in GitHub Releases, not in Git history
+*.msi
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+*.zip
