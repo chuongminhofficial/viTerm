@@ -1,3 +1,19 @@
+# Nhật ký phát hành
+
+## [2.6.0] — 2026-10-29
+
+- Bổ sung giao diện Server Control Center, Spotlight onboarding, kiểm tra nhiều host và tự khóa khi không hoạt động từ frontend mới.
+- Giữ luồng SSO trực tiếp, quản lý license, SSH/SFTP và Cloud hiện có.
+- Sửa selector CSS Spotlight gây lỗi minify khi build Vite.
+- Dùng phiên bản trong package.json để tạo phiên bản/build number hiển thị trong frontend.
+- Bỏ thông báo phát hành mẫu, link tải giả và checksum minh họa; fallback chuyển về trang Releases chính thức.
+- Bổ sung pipeline private để tạo Setup/Portable Windows, DMG/ZIP macOS theo kiến trúc và AppImage/DEB Linux.
+- Chỉ công khai release khi đủ 8 bộ cài. Giữ nguyên các release trước đó.
+
+Phạm vi kiểm tra: frontend build và các công cụ chuẩn bị/phát hành được kiểm tra riêng. Phần Rust gốc được lấy tại máy người phát hành, nên phải kiểm tra qua workflow và chạy thử trên từng hệ điều hành trước khi khẳng định mọi tính năng native hoạt động.
+
+---
+
 # Nhật ký Phát hành (Changelog)
 
 ## [2.5.0] — 2026-10-29

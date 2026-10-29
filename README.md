@@ -4,8 +4,8 @@
   <p><strong>Trình quản trị máy chủ SSH, Dual-Pane SFTP kéo thả, Chia khung 2×2 Split View & Trợ lý AI DevOps thế hệ mới</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/Version-2.5.0%20Enterprise-0A84FF?style=for-the-badge" alt="Version" />
-    <img src="https://img.shields.io/badge/Platform-Windows%20x64-30D158?style=for-the-badge" alt="Platform" />
+    <img src="https://img.shields.io/badge/Version-2.6.0%20Enterprise-0A84FF?style=for-the-badge" alt="Version" />
+    <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-30D158?style=for-the-badge" alt="Platform" />
     <img src="https://img.shields.io/badge/Engine-Tauri%20v2%20%2B%20Rust%20SSH2-FF9F0A?style=for-the-badge" alt="Engine" />
     <img src="https://img.shields.io/badge/Security-AES--256--GCM-BF5AF2?style=for-the-badge" alt="Security" />
   </p>
@@ -74,6 +74,18 @@
 
 ---
 
+## Mới trong 2.6.0
+
+- **Server Control Center:** giao diện theo dõi tài nguyên và thao tác quản trị tiến trình, systemd, Docker, UFW và cron qua các kết nối máy chủ.
+- **Spotlight onboarding:** hướng dẫn từng bước trên giao diện, kèm điều hướng và bỏ qua.
+- **Thông báo/cập nhật từ backend:** hiển thị thông báo, ghi chú phát hành và đường dẫn tải do backend cung cấp.
+- **Kiểm tra nhiều host và tự khóa khi không hoạt động:** các công cụ bổ sung cho không gian quản trị.
+- **Phát hành đa nền tảng:** source private, bộ cài và checksum public. Không đưa source hoặc sourcemap lên repo giới thiệu.
+
+Các mục trên có trong frontend mới. Khả năng native trên từng hệ điều hành cần được xác nhận bằng build và chạy thử bản phát hành tương ứng.
+
+---
+
 ## 🔐 Kiến trúc Bảo mật Zero-Trust
 
 | Lớp bảo vệ | Cơ chế kỹ thuật |
@@ -87,21 +99,24 @@
 
 ## 📦 Tải xuống & Cài đặt
 
-Bản Windows **viTerm 2.5.0 — x64** gồm hai bộ cài:
+viTerm **2.6.0** được đóng gói từ repo source private bằng GitHub Actions. Bộ cài chỉ xuất hiện sau khi các job build và publish hoàn tất.
 
-| Định dạng | Tên tệp | Cách sử dụng |
-| :--- | :--- | :--- |
-| EXE (NSIS) | `viTerm_2.5.0_x64-setup.exe` | Cài đặt qua trình hướng dẫn. |
-| MSI | `viTerm_2.5.0_x64_en-US.msi` | Cài đặt bằng Windows Installer. |
+**[Tải phiên bản mới nhất](https://github.com/chuongminhofficial/viTerm/releases/latest)** · **[Tất cả phiên bản](https://github.com/chuongminhofficial/viTerm/releases)**
 
-Tìm tệp đính kèm của bản **v2.5.0** trong **[Releases](https://github.com/chuongminhofficial/viTerm/releases)**. Nếu chưa thấy tệp, bộ cài chưa được tải lên release. Chọn một trong hai định dạng để cài cùng phiên bản ứng dụng.
+| Hệ điều hành | Bộ cài |
+| --- | --- |
+| Windows x64 | `viTerm-Setup-2.6.0-x64.exe`, `viTerm-Portable-2.6.0-x64.exe` |
+| macOS Intel | `viTerm-macOS-2.6.0-x64.dmg`, `.zip` |
+| macOS Apple Silicon | `viTerm-macOS-2.6.0-arm64.dmg`, `.zip` |
+| Linux x64 | `viTerm-Linux-2.6.0-x64.AppImage`, `.deb` |
 
-1. Tải bộ cài phù hợp về máy Windows x64.
-2. Chạy bộ cài và mở viTerm.
-3. Đăng nhập trực tiếp với tài khoản CM Studio SSO nếu cần dùng tính năng cloud.
-4. Sau khi kích hoạt key hoặc quản trị thay đổi license, đăng xuất và đăng nhập lại để nhận quyền/thời hạn mới.
+`SHA256SUMS.txt` đi kèm release chứa hash từ chính các bộ cài.
+Bản Portable Windows tự giải nén vào thư mục tạm rồi chạy, không cài ứng dụng; cần WebView2 Runtime trên máy. Dữ liệu người dùng vẫn lưu tại thư mục dữ liệu thông thường của ứng dụng.
+Các bản hiện chưa ký chứng thư Windows/macOS và chưa notarize trên macOS.
 
-**macOS / Linux:** chưa có bộ cài được cung cấp trong đợt phát hành này.
+1. Chọn bộ cài đúng hệ điều hành và kiến trúc máy.
+2. Mở viTerm; đăng nhập CM Studio SSO khi cần tính năng cloud.
+3. Đăng xuất và đăng nhập lại sau khi quản trị thay đổi quyền/thời hạn license.
 
 ### Thay đổi về tài khoản và Cloud
 
@@ -117,7 +132,7 @@ Tìm tệp đính kèm của bản **v2.5.0** trong **[Releases](https://github.
 
 **viTerm** is an SSH, Dual-Pane SFTP, split terminal, and AI DevOps workspace built with **Tauri v2 (Rust)** and **xterm.js**.
 
-The current release package targets **Windows x64**, with NSIS EXE and MSI installers. Sign in directly with CM Studio SSO; license changes take effect after signing out and back in. macOS and Linux installers are not included in this release.
+The release pipeline targets Windows x64 (Setup and Portable EXE), macOS Intel / Apple Silicon (DMG and ZIP), and Linux x64 (AppImage and DEB). Downloads become available after the private build workflow publishes all installers. Portable Windows requires WebView2 Runtime and uses the standard app data directory.
 
 - **2×2 Split Terminal & Broadcast Input**: Run up to 4 concurrent SSH or Local PTY sessions with live theme switching and smart `Ctrl + Click` URL detection.
 - **AI Terminal Agent**: Connect **Ollama Local**, **Google Gemini**, **OpenAI**, **OpenRouter**, **Groq**, **DeepSeek**, or **Claude** with 1-Click Model Scanning, Auto-Pilot execution, and Safe-Guard protection.
