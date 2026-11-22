@@ -1,147 +1,138 @@
 <div align="center">
-  <img src="assets/app-icon.png" alt="viTerm Logo" width="110" height="110" style="border-radius: 24px;" />
-  <h1>viTerm — Apple-Crafted SSH, SFTP & AI Terminal Workspace</h1>
-  <p><strong>Trình quản trị máy chủ SSH, Dual-Pane SFTP kéo thả, Chia khung 2×2 Split View & Trợ lý AI DevOps thế hệ mới</strong></p>
+  <img src="assets/hero-banner.svg" alt="viTerm v2.8.0 — Chuong Minh Studio" width="100%" />
+
+  <br />
 
   <p>
-    <img src="https://img.shields.io/badge/Version-2.6.0%20Enterprise-0A84FF?style=for-the-badge" alt="Version" />
-    <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-30D158?style=for-the-badge" alt="Platform" />
-    <img src="https://img.shields.io/badge/Engine-Tauri%20v2%20%2B%20Rust%20SSH2-FF9F0A?style=for-the-badge" alt="Engine" />
-    <img src="https://img.shields.io/badge/Security-AES--256--GCM-BF5AF2?style=for-the-badge" alt="Security" />
+    <a href="https://github.com/chuongminhofficial/viTerm/releases/latest">
+      <img src="https://img.shields.io/badge/Release-v2.8.0-10B981?style=for-the-badge&logo=github" alt="Latest Release" />
+    </a>
+    <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-0A84FF?style=for-the-badge" alt="Platform" />
+    <img src="https://img.shields.io/badge/Engine-Tauri%20v2%20%2B%20Rust-F59E0B?style=for-the-badge&logo=rust&logoColor=white" alt="Engine" />
+    <img src="https://img.shields.io/badge/Signed-Chuong%20Minh%20Studio-6366F1?style=for-the-badge&logo=windows" alt="Signed" />
+    <img src="https://img.shields.io/badge/Vault-AES--256--GCM-8B5CF6?style=for-the-badge" alt="Security" />
   </p>
 
   <p>
-    <a href="#-tính-năng-nổi-bật">Tính năng</a> •
-    <a href="#-ai-terminal-agent--bot-devops">AI Terminal Agent</a> •
-    <a href="#-dual-pane-sftp--live-code-editor">SFTP Studio</a> •
-    <a href="#-kiến-trúc-bảo-mật-zero-trust">Bảo mật</a> •
-    <a href="#-tải-xuống--cài-đặt">Tải xuống</a> •
-    <a href="#-english-overview">English</a>
+    <strong>Trình quản trị hạ tầng SSH, Dual-Pane SFTP, Terminal Chia khung thông minh (1×1 / 1×2 / 1+2 / 2×2), Server Control Center &amp; AI DevOps Workspace</strong><br />
+    <em>Thiết kế chuẩn công nghiệp Casa Engine Square Mono • Hiệu năng Native Rust • Phát triển bởi <strong>Chuong Minh Studio</strong></em>
+  </p>
+
+  <p>
+    <a href="#-tải-xuống--cài-đặt-v280"><b>📦 Tải xuống v2.8.0</b></a> •
+    <a href="#-điểm-nâng-cấp-lớn-trong-v280"><b>🚀 Có gì mới</b></a> •
+    <a href="#-tính-năng-cốt-lõi"><b>⚡ Tính năng</b></a> •
+    <a href="#-chữ-ký-số--kiểm-chứng-toàn-vẹn"><b>🔐 Chữ ký số &amp; SHA-256</b></a> •
+    <a href="#-english-summary"><b>🌐 English</b></a>
   </p>
 </div>
 
 ---
 
-## 🌟 Giới thiệu tổng quan
-
-**viTerm** là không gian làm việc hạ tầng đám mây (SSH, SFTP, Port Forwarding, Keychain & AI DevOps Copilot) được thiết kế tối giản theo chuẩn **Apple Human Interface Guidelines (macOS Sequoia Dark & Apple Keynote Light)**.
-
-> **Lưu ý về Kho lưu trữ (Official Public Showcase Repository)**:
-> Đây là kho lưu trữ giới thiệu sản phẩm, tài liệu hướng dẫn, theo dõi lỗi (Issues) và phát hành bản cài đặt chính thức (`.msi` / `.exe` / `.dmg` / `.AppImage`) của **viTerm**. Mã nguồn lõi và cấu hình máy chủ nội bộ được lưu riêng; repo này dùng cho tài liệu, Issues và bản phát hành.
+> **Official Public Release & Showcase Repository**  
+> Kho lưu trữ này là kênh phát hành chính thức các gói cài đặt đã biên dịch (`.exe`, `.dmg`, `.zip`, `.AppImage`, `.deb`), chứng chỉ công khai, mã băm kiểm chứng `SHA256SUMS.txt`, tài liệu kỹ thuật và tiếp nhận báo lỗi (Issues). Mã nguồn gốc được lưu giữ riêng tư tại `chuongminhofficial/viTerm-source` và tự động đóng gói đa nền tảng qua GitHub Actions.
 
 ---
 
-## ✨ Tính năng nổi bật
+## 📦 Tải xuống & Cài đặt (v2.8.0)
 
-### 1. 🖥 Terminal Chia khung 2×2 (`Split View`) & 10 Chủ đề Giao diện
-- **Chia khung linh hoạt (`1×1`, `1×2`, `2×2 Quad Grid`)**: Mở đồng thời tối đa 4 phiên SSH hoặc Local Shell (PowerShell / Bash) trên cùng một màn hình với tốc độ kết xuất 60fps.
-- **Broadcast Input (`Gõ 1 khung — Thực thi đồng loạt`)**: Gửi lệnh cùng lúc tới toàn bộ dàn máy chủ trong nhóm chỉ với 1 lần gõ phím.
-- **Tự động phát hiện Link thông minh (`Ctrl + Click chuột trái`)**: Tự động gạch chân mọi URL/IP trong Terminal kèm menu mở nhanh trên trình duyệt mặc định hoặc cửa sổ Popup nội bộ.
-- **Ghi nhớ thao tác Chuột phải thông minh**: Tùy chọn tự động *Có bôi đen → Copy, Không → Dán* hoặc *Dán ngay lập tức* và ghi nhớ vĩnh viễn cho các lần sau.
-- **Apple Command Palette (`Ctrl + K`)**: Tìm kiếm và kết nối tức thì tới bất kỳ máy chủ, công cụ hoặc câu lệnh nào.
+<div align="center">
+  <a href="https://github.com/chuongminhofficial/viTerm/releases/tag/v2.8.0">
+    <img src="https://img.shields.io/badge/⬇%20TẢI%20VITERM%20v2.8.0%20NGAY-10B981?style=for-the-badge" alt="Download viTerm v2.8.0" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/chuongminhofficial/viTerm/releases">
+    <img src="https://img.shields.io/badge/Tất%20cả%20phiên%20bản-1E293B?style=for-the-badge" alt="All Releases" />
+  </a>
+</div>
 
-### 2. 🤖 AI Terminal Agent & Điều khiển VPS từ xa
-- **9 Cổng API mẫu 1-Click & Tương thích hoàn toàn `OpenAI-Compatible`**:
-  - Hỗ trợ **Ollama Local** (chạy miễn phí trên máy không cần API Key), **Google Gemini**, **OpenAI**, **OpenRouter**, **Groq Cloud LPU**, **DeepSeek (V3/R1)**, **LM Studio**, **vLLM / LocalAI / Jan.ai**, và **Anthropic Claude**.
-- **Tự động Quét Model (`1-Click Auto Model Scanner`)**: Tự động truy vấn danh sách model trực tiếp từ cổng API để chọn ngay mà không cần gõ tay.
-- **Chế độ Auto-Pilot & Safe-Guard**:
-  - Tự động đọc ngữ cảnh lỗi trên màn hình Terminal để chẩn đoán và sinh lệnh sửa lỗi.
-  - Bộ lọc **Safe-Guard** tự động chặn và yêu cầu xác nhận trước khi thực thi các lệnh nhạy cảm (`rm -rf`, `mkfs`, `reboot`).
+<br />
 
-![AI Terminal Agent](assets/screenshots/ai-terminal-agent.png)
+| Hệ điều hành | Gói phát hành | Đặc điểm & Chữ ký số | Khuyên dùng |
+| :--- | :--- | :--- | :---: |
+| **Windows 10/11 (x64)** | `viTerm_2.8.0_x64-setup.exe` *(Offline Full)* | Nhúng sẵn WebView2 Offline Installer • **Đã ký số `Chuong Minh Studio` + DigiCert Timestamp** | ⭐ Khuyên dùng (VM / Offline) |
+| **Windows 10/11 (x64)** | `viTerm_2.8.0_x64-setup-light.exe` *(~4.8 MB)* | Bộ cài siêu nhẹ dùng WebView2 Bootstrapper • **Đã ký số `Chuong Minh Studio` + DigiCert Timestamp** | ⚡ Tải nhanh |
+| **Windows 10/11 (x64)** | `viterm.exe` *(~5.4 MB Standalone)* | File thực thi trực tiếp đã ký số `Chuong Minh Studio` | 🧰 Portable |
+| **macOS Apple Silicon** | `viTerm-macOS-2.8.0-arm64.dmg` / `.zip` | Build native `aarch64-apple-darwin` qua GitHub Actions | 🍎 M1 / M2 / M3 / M4 |
+| **macOS Intel** | `viTerm-macOS-2.8.0-x64.dmg` / `.zip` | Build native `x86_64-apple-darwin` qua GitHub Actions | 💻 Intel Mac |
+| **Linux (x64)** | `viTerm-Linux-2.8.0-x64.AppImage` / `.deb` | Build native `x86_64-unknown-linux-gnu` (Ubuntu/Debian/Arch/Fedora) | 🐧 Linux |
+| **Chứng chỉ & Checksum** | `ChuongMinhStudio-CodeSigning.cer`, `SHA256SUMS.txt` | Chứng chỉ công khai RSA-3072 & mã băm SHA-256 đối chiếu | 🔐 Xác thực |
 
-### 3. 📂 Apple Finder Pro Dual-Pane SFTP & Live Code Editor
-- **Khởi đầu trực tiếp tại `/root` & Thanh đường dẫn Breadcrumb**: Điều hướng phân cấp `[ / ] › [ var ] › [ www ]` và lối tắt 1-Click (`/root`, `/`, `/var/www`, `/etc`, `/home`).
-- **Kéo & Thả 2 chiều (`Drag & Drop`) + Upload File lớn có Thanh tiến trình (`Progress Bar`)**:
-  - Kéo tệp từ khung Local thả sang khung Remote (hoặc kéo trực tiếp từ Windows Explorer) để tải lên theo luồng kèm thanh phần trăm tiến độ trực quan.
-  - Kéo tệp từ khung Remote thả sang khung Local để tải về máy.
-- **Trình sửa Code trực tiếp (`Live Code Editor`) với `Auto-Save`**:
-  - Nhấn đúp vào tệp trên Server để mở trình soạn thảo có đánh số dòng, hỗ trợ `Ctrl + S` và **Tự động Lưu & Upload** ngay khi ngừng gõ, đồng thời tự động dọn sạch bản tạm cũ trên máy cục bộ.
-- **Giải nén 1-Click & Đổi tên trực tiếp**: Giải nén `.zip`, `.tar.gz`, `.tgz`, `.tar`, `.bz2`, `.xz`, `.gz` ngay trên Server.
+---
+
+## 🚀 Điểm nâng cấp lớn trong v2.8.0
+
+| Hạng mục | Cải tiến kỹ thuật chi tiết |
+| :--- | :--- |
+| **🪟 Sửa triệt để lỗi Thu nhỏ (Minimize) Windows** | Tích hợp Win32 FFI **Work-Area Fit** (`MONITORINFO.rc_work` + `WS_MINIMIZEBOX / WS_SYSMENU`) cho cửa sổ không viền, giúp thu nhỏ và bấm Taskbar mở lại mượt mà 100% không bao giờ bị kẹt. |
+| **⌨️ Tự động vô hiệu hóa Telex / VNI trong Terminal** | Cơ chế bảo vệ **2 lớp** (Win32 `ImmAssociateContextEx` + tự động chuyển Keyboard Layout sang `EN` khi focus Terminal kết hợp bộ giải mã ASCII thời gian thực chặn cả UniKey/EVKey ngoài). Gõ `clear`, `free`, `ufw`, `root`, `dd`, `awk` chuẩn xác tuyệt đối. Có nút bật/tắt nhanh `EN · Tắt Telex/VNI` ngay trên thanh lệnh. |
+| **💾 Local-First & Ghi nhớ Theme/Ngôn ngữ vĩnh viễn** | Ưu tiên Tauri Persistent Store (`viterm_data.json`), giữ cố định chế độ Sáng/Tối và Ngôn ngữ qua mọi lần khởi động. Toàn bộ cấu hình & máy chủ lưu cục bộ 100%; chỉ tự động kéo Cloud Sync khi đăng nhập lần đầu trên máy mới. |
+| **🧩 Chia khung thông minh (`1×1`, `1×2`, `1+2`, `2×2`)** | Thêm bố cục **3 khung (`1+2`)**, nút `+` thêm khung tự động kết nối, và nút `−` / `×` đóng chính xác từng khung riêng lẻ mà **giữ nguyên toàn bộ phiên SSH/Shell** đang chạy ở các khung còn lại kèm hiệu ứng mượt mà. |
+| **🌍 Chuẩn xác 100% giao diện RTL (Tiếng Ả Rập)** | Sửa triệt để lỗi hở khoảng trống 216px khi mở Terminal ở chế độ `dir="rtl"`, tự động căn phải Sidebar/Dock và giữ lưới ký tự `xterm.js` căn trái chuẩn xác. |
+| **⚡ Hiệu năng & Bảo mật cấp hệ thống** | Bật **Content Security Policy (CSP)**, gia cố chống SSH Option Injection, dọn dẹp 100% tiến trình ngầm và ghi đè `0x00` xóa khóa tạm khi thoát, cắt giảm >55% dung lượng CSS và >15MB font thừa. |
+
+---
+
+## ⚡ Tính năng cốt lõi
+
+### 1. 🖥 Multi-Tab & Smart Split-View Terminal (`xterm.js` 60fps)
+- **Đa Tab + Đa khung**: Mở không giới hạn số Tab; mỗi Tab chia tối đa 4 khung (`1×1`, `1×2`, `1+2`, `2×2`) chạy đồng thời SSH VPS, Windows PowerShell, CMD hoặc Bash/WSL.
+- **Native `SSH_ASKPASS` nội bộ**: Tự động xác thực Password/Passphrase và dọn xung đột `known_hosts` ngầm, không bật cửa sổ CMD đen, không bị màn hình Terminal trống.
+- **Broadcast Input & Smart Command Bar**: Gõ lệnh đồng loạt trên nhiều máy chủ; thanh nhập lệnh thông minh luôn cố định ở đáy kèm nút nhảy nhanh đầu/cuối trang và chế độ `TUI Fit`.
+- **Smart Link (`Ctrl + Click`) & Right-Click Memory**: Tự động nhận diện URL/IP trong luồng log Terminal và ghi nhớ thao tác chuột phải Copy/Paste.
+
+### 2. 📊 Server Control Center (Quản trị Máy chủ Toàn diện)
+- Giám sát thời gian thực từ máy chủ thật (không giả lập): **CPU Load, RAM, Disk (`df -hT`), Network Interfaces (`/proc/net/dev`), Listening Ports (`ss -tulpn`)**.
+- **Process Manager**: Lọc tiến trình, gửi `SIGTERM (-15)` hoặc `SIGKILL (-9)` 1-Click.
+- **Systemd Services & Docker Studio**: Start/Stop/Restart/Reload dịch vụ, xem `journalctl` / `docker logs`, mở shell container và dọn cache Docker.
+- **Firewall UFW, Fail2ban & Cronjobs**: Thêm/chặn cổng UFW, rà soát IP Brute-force SSH và quản lý Crontab trực quan.
+
+### 3. 📂 Dual-Pane SFTP Studio & Live Code Editor
+- Kéo & thả 2 chiều giữa **Local Machine ↔ Remote Server** (và kéo trực tiếp từ Windows Explorer) với thanh tiến trình thời gian thực.
+- **Live Code Editor (Auto-Save)**: Sửa file cấu hình/code trực tiếp trên server, tự động đồng bộ khi ngừng gõ và dọn sạch bản tạm cục bộ.
+- Giải nén 1-Click (`.zip`, `.tar.gz`, `.tgz`, `.tar.bz2`, `.tar.xz`) và đổi tên ngay trên giao diện.
 
 ![Dual-Pane SFTP Studio](assets/screenshots/sftp-dual-pane.png)
 
-### 4. 🔔 Trung tâm Thông báo Đa kênh (`Telegram`, `Zalo Bot`, `Slack`, `Discord`)
-- Đẩy cảnh báo thời gian thực về điện thoại và nhóm vận hành khi:
-  - Có phiên kết nối hoặc ngắt kết nối SSH / VPS.
-  - Tải lên, tải xuống hoặc chỉnh sửa tệp cấu hình trên SFTP.
-  - AI Agent thực thi lệnh điều khiển máy chủ từ xa.
-  - Đăng nhập Single Sign-On (SSO) hoặc phát hiện cảnh báo bảo mật.
+### 4. 🤖 AI Terminal Copilot & Thông báo Đa kênh
+- Kết nối trực tiếp **Ollama Local** (miễn phí), **Gemini**, **OpenAI**, **OpenRouter**, **Groq**, **DeepSeek**, **LM Studio**, **vLLM**, và **Claude** với bộ quét Model 1-Click.
+- **Safe-Guard** cảnh báo lệnh nguy hiểm (`rm -rf`, `mkfs`, `reboot`) và đẩy cảnh báo vận hành tức thì về **Telegram Bot**, **Zalo Bot**, **Slack**, **Discord**.
 
-### 5. 🌍 Đa ngôn ngữ hoàn chỉnh (`VI` / `EN` / `AR - RTL`) & Tự động nhận diện
-- **Tự động nhận diện lần đầu (`Auto-Detect`)**: Tự động khớp ngôn ngữ hệ điều hành và giao diện Sáng/Tối (`Apple Keynote Light` / `macOS Sequoia Dark`) ngay lần khởi chạy đầu tiên.
-- Hỗ trợ hoàn chỉnh **Tiếng Việt**, **English (US)**, và **العربية (Arabic RTL)** với bố cục đảo chiều chuẩn xác.
+![AI Terminal Agent](assets/screenshots/ai-terminal-agent.png)
 
 ---
 
-## Mới trong 2.6.0
+## 🔐 Chữ ký số & Kiểm chứng toàn vẹn
 
-- **Server Control Center:** giao diện theo dõi tài nguyên và thao tác quản trị tiến trình, systemd, Docker, UFW và cron qua các kết nối máy chủ.
-- **Spotlight onboarding:** hướng dẫn từng bước trên giao diện, kèm điều hướng và bỏ qua.
-- **Thông báo/cập nhật từ backend:** hiển thị thông báo, ghi chú phát hành và đường dẫn tải do backend cung cấp.
-- **Kiểm tra nhiều host và tự khóa khi không hoạt động:** các công cụ bổ sung cho không gian quản trị.
-- **Phát hành đa nền tảng:** source private, bộ cài và checksum public. Không đưa source hoặc sourcemap lên repo giới thiệu.
+Các tệp phát hành Windows của **viTerm v2.8.0** được ký số chuẩn **Authenticode SHA-256** kèm dấu thời gian **DigiCert RFC3161**:
 
-Các mục trên có trong frontend mới. Khả năng native trên từng hệ điều hành cần được xác nhận bằng build và chạy thử bản phát hành tương ứng.
-
----
-
-## 🔐 Kiến trúc Bảo mật Zero-Trust
-
-| Lớp bảo vệ | Cơ chế kỹ thuật |
+| Thuộc tính | Giá trị xác thực |
 | :--- | :--- |
-| **Mã hóa Local Vault & Cloud Sync** | Toàn bộ mật khẩu SSH, Private Key và cấu hình VPS được mã hóa chuẩn **AES-256-GCM** kết hợp dẫn xuất khóa **PBKDF2-HMAC-SHA256 (100.000 vòng)**. |
-| **Xác thực CM Studio SSO** | Đăng nhập trực tiếp bằng Username/Email và mật khẩu trong viTerm, hỗ trợ **2FA TOTP** và **OTP thiết bị mới**. Luồng popup đăng nhập SSO đã được bỏ. |
-| **Zeroize Khóa tạm tức thì** | Mọi khóa tạm phục vụ kết nối đều được khóa quyền truy cập cá nhân (`0600` / Windows `icacls`) và ghi đè `0x00` trước khi hủy ngay sau khi xác thực. |
-| **Kiểm tra Host Key SHA-256** | Tích hợp công cụ quét dấu vân tay máy chủ (`SHA-256 Fingerprint Scanner`) và trình quản lý `Known Hosts` chống tấn công Man-in-the-Middle. |
+| **Signer Subject** | `CN=Chuong Minh Studio, O=Chuong Minh Studio, C=VN` |
+| **Thuật toán** | `RSA-3072 / SHA-256` + `DigiCert SHA256 RSA4096 Timestamp` |
+| **Certificate Thumbprint** | `C189966102B56902F723943D0EA49E76B421D201` |
+| **NSIS Trust Hook** | Tự động cài đặt chứng chỉ công khai vào `CurrentUser\Root` & `CurrentUser\TrustedPublisher` (tự gỡ sạch khi Uninstall) |
+
+### Kiểm chứng mã băm SHA-256 trên Windows PowerShell
+```powershell
+Get-FileHash -Algorithm SHA256 .\viTerm_2.8.0_x64-setup.exe
+Get-AuthenticodeSignature .\viTerm_2.8.0_x64-setup.exe | Format-List Status, SignerCertificate, TimeStamperCertificate
+```
 
 ---
 
-## 📦 Tải xuống & Cài đặt
+## 🌐 English Summary
 
-viTerm **2.6.0** được đóng gói từ repo source private bằng GitHub Actions. Bộ cài chỉ xuất hiện sau khi các job build và publish hoàn tất.
+**viTerm v2.8.0** (*Chuong Minh Studio Edition*) is a high-performance **SSH, Dual-Pane SFTP, Smart Split-View Terminal, Server Control Center & AI DevOps Workspace** built on **Tauri v2 (Rust)** and **xterm.js**.
 
-**[Tải phiên bản mới nhất](https://github.com/chuongminhofficial/viTerm/releases/latest)** · **[Tất cả phiên bản](https://github.com/chuongminhofficial/viTerm/releases)**
-
-| Hệ điều hành | Bộ cài |
-| --- | --- |
-| Windows x64 | `viTerm-Setup-2.6.0-x64.exe`, `viTerm-Portable-2.6.0-x64.exe` |
-| macOS Intel | `viTerm-macOS-2.6.0-x64.dmg`, `.zip` |
-| macOS Apple Silicon | `viTerm-macOS-2.6.0-arm64.dmg`, `.zip` |
-| Linux x64 | `viTerm-Linux-2.6.0-x64.AppImage`, `.deb` |
-
-`SHA256SUMS.txt` đi kèm release chứa hash từ chính các bộ cài.
-Bản Portable Windows tự giải nén vào thư mục tạm rồi chạy, không cài ứng dụng; cần WebView2 Runtime trên máy. Dữ liệu người dùng vẫn lưu tại thư mục dữ liệu thông thường của ứng dụng.
-Các bản hiện chưa ký chứng thư Windows/macOS và chưa notarize trên macOS.
-
-1. Chọn bộ cài đúng hệ điều hành và kiến trúc máy.
-2. Mở viTerm; đăng nhập CM Studio SSO khi cần tính năng cloud.
-3. Đăng xuất và đăng nhập lại sau khi quản trị thay đổi quyền/thời hạn license.
-
-### Thay đổi về tài khoản và Cloud
-
-- Đăng nhập trực tiếp CM Studio SSO trong ứng dụng; giữ bước xác minh 2FA/OTP khi được yêu cầu.
-- Đã bỏ nút **SYNC** và **Đồng bộ ngay**. Tùy chọn lưu host lên cloud và tải danh sách khi đăng nhập vẫn được giữ.
-- Thay đổi khóa/gia hạn license áp dụng ở lần đăng nhập tiếp theo. Phiên hiện tại giữ quyền và thời hạn đã nhận lúc đăng nhập.
-- License đã kích hoạt cho cùng tài khoản không trừ thêm lượt khi gửi lại cùng key.
-
-
----
-
-## 🌐 English Overview
-
-**viTerm** is an SSH, Dual-Pane SFTP, split terminal, and AI DevOps workspace built with **Tauri v2 (Rust)** and **xterm.js**.
-
-The release pipeline targets Windows x64 (Setup and Portable EXE), macOS Intel / Apple Silicon (DMG and ZIP), and Linux x64 (AppImage and DEB). Downloads become available after the private build workflow publishes all installers. Portable Windows requires WebView2 Runtime and uses the standard app data directory.
-
-- **2×2 Split Terminal & Broadcast Input**: Run up to 4 concurrent SSH or Local PTY sessions with live theme switching and smart `Ctrl + Click` URL detection.
-- **AI Terminal Agent**: Connect **Ollama Local**, **Google Gemini**, **OpenAI**, **OpenRouter**, **Groq**, **DeepSeek**, or **Claude** with 1-Click Model Scanning, Auto-Pilot execution, and Safe-Guard protection.
-- **Apple Finder Pro SFTP**: Bidirectional Drag & Drop, chunked large-file upload with live progress bar, 1-click archive extraction, and a built-in Live Code Editor with Auto-Save.
-- **Multi-Channel Ops Alerts**: Real-time notifications to **Telegram Bot**, **Zalo Bot**, **Slack**, and **Discord**.
-- **Full Localization**: Automatic OS theme & language detection supporting **Vietnamese**, **English**, and **Arabic (RTL)**.
+- **Zero-Glitch Windows UX**: Native Win32 Work-Area Fit for borderless windows ensures reliable taskbar minimize/restore on Windows 10/11.
+- **Automatic Terminal IME / Telex / VNI Guard**: Dual-layer native Win32 IME suppression + real-time ASCII reconstruction prevents Vietnamese Telex/VNI input methods from corrupting shell commands.
+- **Local-First Architecture**: Instant startup with persistent local theme/language/vault storage (`AES-256-GCM`); cloud sync automatically triggers only on new devices.
+- **Smart Split Panes (`1×1`, `1×2`, `1+2`, `2×2`) & Full RTL Support**: Add or close individual panes smoothly without interrupting sibling sessions, with pixel-accurate Arabic RTL layout.
+- **Signed Releases**: Windows installers and standalone binaries are Authenticode-signed by **Chuong Minh Studio** with DigiCert RFC3161 timestamps, alongside automated GitHub Actions builds for **macOS (Apple Silicon & Intel)** and **Linux (AppImage & DEB)**.
 
 ---
 
 <div align="center">
-  <p>Crafted with ❤️ by <strong>viTerm Team</strong> • All Rights Reserved.</p>
+  <p>Crafted with precision by <strong>Chuong Minh Studio</strong> • <a href="CHANGELOG.md">Changelog</a> • <a href="SECURITY.md">Security Policy</a> • <a href="https://github.com/chuongminhofficial/viTerm/issues">Report an Issue</a></p>
 </div>
