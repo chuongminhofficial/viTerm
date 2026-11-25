@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="assets/hero-banner.svg" alt="viTerm v2.8.0 — Chuong Minh Studio" width="100%" />
+  <img src="assets/hero-banner.svg" alt="viTerm v2.8.1 — Chuong Minh Studio" width="100%" />
 
   <br />
 
   <p>
     <a href="https://github.com/chuongminhofficial/viTerm/releases/latest">
-      <img src="https://img.shields.io/badge/Release-v2.8.0-10B981?style=for-the-badge" alt="Latest Release" />
+      <img src="https://img.shields.io/badge/Release-v2.8.1-10B981?style=for-the-badge" alt="Latest Release" />
     </a>
     <img src="https://img.shields.io/badge/Platform-Windows%20x64-0A84FF?style=for-the-badge" alt="Platform" />
     <img src="https://img.shields.io/badge/Engine-Tauri%20v2%20%2B%20Rust-F59E0B?style=for-the-badge" alt="Engine" />
@@ -19,8 +19,8 @@
   </p>
 
   <p>
-    <a href="#tai-xuong--cai-dat-v280"><b>Tải xuống v2.8.0</b></a> |
-    <a href="#diem-nang-cap-lon-trong-v280"><b>Có gì mới</b></a> |
+    <a href="#tai-xuong--cai-dat-v281"><b>Tải xuống v2.8.1</b></a> |
+    <a href="INSTALLER_PARAMETERS.md"><b>Installer Parameters &amp; Return Codes</b></a> |
     <a href="#tinh-nang-cot-loi"><b>Tính năng</b></a> |
     <a href="#chu-ky-so--kiem-chung-toan-ven"><b>Chữ ký số &amp; SHA-256</b></a> |
     <a href="#english-summary"><b>English</b></a>
@@ -30,15 +30,15 @@
 ---
 
 > **Official Public Release & Showcase Repository**  
-> Kho lưu trữ này là kênh phát hành chính thức các gói cài đặt đã biên dịch và ký số (`.exe`, `.msi`), chứng chỉ công khai (`.cer`), bảng mã băm `SHA256SUMS.txt`, tài liệu kỹ thuật và tiếp nhận báo lỗi (Issues). Mã nguồn gốc được lưu giữ riêng tư tại `chuongminhofficial/viTerm-source`.
+> Kho lưu trữ này là kênh phát hành chính thức các gói cài đặt đã biên dịch và ký số (`.exe`, `.msi`), chứng chỉ công khai (`.cer`), bảng mã băm `SHA256SUMS.txt`, tài liệu tham số cài đặt [`INSTALLER_PARAMETERS.md`](INSTALLER_PARAMETERS.md) và tiếp nhận báo lỗi (Issues). Mã nguồn gốc được lưu giữ riêng tư tại `chuongminhofficial/viTerm-source`.
 
 ---
 
-## Tải xuống & Cài đặt (v2.8.0)
+## Tải xuống & Cài đặt (v2.8.1)
 
 <div align="center">
-  <a href="https://github.com/chuongminhofficial/viTerm/releases/tag/v2.8.0">
-    <img src="https://img.shields.io/badge/TAI%20VITERM%20v2.8.0%20WINDOWS%20x64-10B981?style=for-the-badge" alt="Download viTerm v2.8.0" />
+  <a href="https://github.com/chuongminhofficial/viTerm/releases/tag/v2.8.1">
+    <img src="https://img.shields.io/badge/TAI%20VITERM%20v2.8.1%20WINDOWS%20x64-10B981?style=for-the-badge" alt="Download viTerm v2.8.1" />
   </a>
   &nbsp;
   <a href="https://github.com/chuongminhofficial/viTerm/releases">
@@ -48,19 +48,20 @@
 
 <br />
 
-Toàn bộ bộ cài đặt Windows x64 v2.8.0 bên dưới đã được biên dịch trực tiếp, kiểm định và ký số **Authenticode SHA-256** bởi **Chuong Minh Studio** kèm dấu thời gian **DigiCert RFC3161**:
+Toàn bộ bộ cài đặt Windows x64 v2.8.1 bên dưới đã được biên dịch trực tiếp, kiểm định tự động chế độ cài đặt Silent (chuẩn **Microsoft Store Policy 10.2.9.2**) và ký số **Authenticode SHA-256** bởi **Chuong Minh Studio** kèm dấu thời gian **DigiCert RFC3161**:
 
-| Gói phát hành | Định dạng & Dung lượng | Đặc điểm & Chữ ký số | Phù hợp cho |
+| Gói phát hành | Định dạng & Dung lượng | Đặc điểm & Chữ ký số | Link Raw / Trực tiếp |
 | :--- | :---: | :--- | :--- |
-| [`viTerm_2.8.0_x64-setup.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/viTerm_2.8.0_x64-setup.exe) | NSIS Offline (~287.3 MB) | Nhúng sẵn WebView2 Offline Installer, tự nạp chứng chỉ `Chuong Minh Studio` vào CurrentUser | Cài offline, VM sạch, môi trường doanh nghiệp |
-| [`viTerm_2.8.0_x64-setup-light.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/viTerm_2.8.0_x64-setup-light.exe) | NSIS Light (~4.82 MB) | Bộ cài siêu nhẹ (dùng WebView2 Bootstrapper), tự nạp chứng chỉ `Chuong Minh Studio` | Windows 10/11 đã có sẵn WebView2 (tải nhanh) |
-| [`viTerm_2.8.0_x64_en-US.msi`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/viTerm_2.8.0_x64_en-US.msi) | Windows MSI (~5.40 MB) | Gói cài đặt chuẩn Microsoft Windows Installer (WiX), hỗ trợ triển khai GPO / Silent `/qn` | Quản trị hệ thống, triển khai hàng loạt |
-| [`viTerm_2.8.0_x64-portable.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/viTerm_2.8.0_x64-portable.exe) | Portable SFX (~2.98 MB) | Chạy trực tiếp không cần cài đặt (yêu cầu WebView2 Runtime trên máy) | USB, kiểm thử nhanh |
-| [`viterm.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/viterm.exe) | Standalone PE (~5.40 MB) | File thực thi độc lập đã ký số `Chuong Minh Studio` | Chạy trực tiếp / đóng gói tùy chỉnh |
-| [`ChuongMinhStudio-CodeSigning.cer`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/ChuongMinhStudio-CodeSigning.cer) | X.509 Public Cert | Chứng chỉ công khai RSA-3072 (không chứa private key) | Nhập tin cậy cục bộ |
-| [`SHA256SUMS.txt`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.0/SHA256SUMS.txt) | Checksum | Danh sách mã băm SHA-256 đối chiếu toàn bộ tệp phát hành | Kiểm chứng toàn vẹn tệp |
+| [`viTerm_2.8.1_x64-store-setup.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-store-setup.exe) | Store Silent (~3.13 MB) | **Chuẩn Microsoft Store (`SilentInstall silent`)**, không hộp thoại, không cần switch, đầy đủ mã lỗi Win32 | [`Direct Raw`](https://raw.githubusercontent.com/chuongminhofficial/viTerm/main/releases/v2.8.1/viTerm_2.8.1_x64-store-setup.exe) |
+| [`viTerm_2.8.1_x64-store-offline-setup.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-store-offline-setup.exe) | Store Offline (~287.33 MB) | **Chuẩn Microsoft Store (`SilentInstall silent`)**, nhúng sẵn WebView2 Offline Runtime | [`Release CDN`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-store-offline-setup.exe) |
+| [`viTerm_2.8.1_x64-setup.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-setup.exe) | NSIS Offline (~287.31 MB) | Nhúng sẵn WebView2 Offline Installer, giao diện cài đặt đầy đủ + hỗ trợ `/S` | [`Release CDN`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-setup.exe) |
+| [`viTerm_2.8.1_x64-setup-light.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-setup-light.exe) | NSIS Light (~4.78 MB) | Bộ cài siêu nhẹ cho người dùng phổ thông (hỗ trợ cả GUI và `/S` không chặn hộp thoại) | [`Direct Raw`](https://raw.githubusercontent.com/chuongminhofficial/viTerm/main/releases/v2.8.1/viTerm_2.8.1_x64-setup-light.exe) |
+| [`viTerm_2.8.1_x64_en-US.msi`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64_en-US.msi) | Windows MSI (~5.43 MB) | Gói cài đặt chuẩn Microsoft Windows Installer (WiX), triển khai GPO / Silent `/qn` | [`Direct Raw`](https://raw.githubusercontent.com/chuongminhofficial/viTerm/main/releases/v2.8.1/viTerm_2.8.1_x64_en-US.msi) |
+| [`viTerm_2.8.1_x64-portable.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-portable.exe) | Portable SFX (~3.01 MB) | Chạy trực tiếp không cần cài đặt (yêu cầu WebView2 Runtime trên máy) | [`Release CDN`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viTerm_2.8.1_x64-portable.exe) |
+| [`viterm.exe`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viterm.exe) | Standalone PE (~5.40 MB) | File thực thi độc lập đã ký số `Chuong Minh Studio` | [`Release CDN`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/viterm.exe) |
+| [`SHA256SUMS.txt`](https://github.com/chuongminhofficial/viTerm/releases/download/v2.8.1/SHA256SUMS.txt) | Checksum | Danh sách mã băm SHA-256 đối chiếu toàn bộ tệp phát hành | [`Direct Raw`](https://raw.githubusercontent.com/chuongminhofficial/viTerm/main/releases/v2.8.1/SHA256SUMS.txt) |
 
-> Ghi chú nền tảng: Phiên bản `v2.8.0` cung cấp đầy đủ 5 định dạng phát hành cho **Windows x64** được build và ký số trực tiếp. Các bản cài cho macOS và Linux từ bản trước vẫn có thể tải tại trang [Releases](https://github.com/chuongminhofficial/viTerm/releases).
+> Ghi chú nền tảng: Phiên bản `v2.8.1` cung cấp đầy đủ các định dạng phát hành cho **Windows x64** (bao gồm bản chuyên biệt cho Microsoft Store Partner Center). Các bản cài cho macOS và Linux từ bản trước vẫn có thể tải tại trang [Releases](https://github.com/chuongminhofficial/viTerm/releases).
 
 ---
 
@@ -108,47 +109,49 @@ Toàn bộ bộ cài đặt Windows x64 v2.8.0 bên dưới đã được biên 
 
 ## Chữ ký số & Kiểm chứng toàn vẹn
 
-Toàn bộ các gói cài đặt và tệp thực thi Windows của **viTerm v2.8.0** đều được ký số chuẩn **Authenticode SHA-256** kèm dấu thời gian **DigiCert RFC3161**:
+Toàn bộ các gói cài đặt và tệp thực thi Windows của **viTerm v2.8.1** đều được ký số chuẩn **Authenticode SHA-256** kèm dấu thời gian **DigiCert RFC3161**:
 
 | Thuộc tính | Giá trị xác thực |
 | :--- | :--- |
 | **Signer Subject** | `CN=Chuong Minh Studio, O=Chuong Minh Studio, C=VN` |
 | **Thuật toán** | `RSA-3072 / SHA-256` + `DigiCert SHA256 RSA4096 Timestamp` |
-| **Certificate Thumbprint** | `C189966102B56902F723943D0EA49E76B421D201` |
-| **NSIS Trust Hook** | Tự động nạp chứng chỉ công khai vào `CurrentUser\Root` & `CurrentUser\TrustedPublisher` khi cài đặt và gỡ sạch khi Uninstall |
+| **Certificate Thumbprint** | `63F0FAF511CD33F8CC7453E6FBC0F20D9126B875` |
+| **Microsoft Store Silent Mode** | `SilentInstall silent` (`store-silent-hooks.nsh`), Zero-UI, đầy đủ mã trả về Win32 tiêu chuẩn ([`INSTALLER_PARAMETERS.md`](INSTALLER_PARAMETERS.md)) |
 
-### Bảng mã băm SHA-256 chính thức (`v2.8.0`)
+### Bảng mã băm SHA-256 chính thức (`v2.8.1`)
 
 ```text
-8128B975D26CB217276C414F7EB73347792CDD9A4F57365315DCDC54AF4BAD94  viTerm_2.8.0_x64-setup.exe
-0A44EBDA99E01ECDAFDD793BD9569414796A5599F23B84D0F600E92462E2C8DD  viTerm_2.8.0_x64-setup-light.exe
-2EFEE4DE70E656CA9FB723CE5F590BFAA709CBD173EBD8A3FE4F78E3B5E7F0F2  viTerm_2.8.0_x64_en-US.msi
-11E511648684EBDDF95EA4C0B98842105D765D2E5D3C979FEE063559458EB67C  viTerm_2.8.0_x64-portable.exe
-B09558569130D37CAF24397FCB2E4B621A1BC9DBF22070D2C4DE6205BAF5BBCA  viterm.exe
-E4A671C94B54C660F4EEA085D7DC08F8B98A0E67AF2C2A4766A426006AD41428  ChuongMinhStudio-CodeSigning.cer
+40100C9B59441AA0C76D4AF4DF5352FF2429FEC28C76ABA8F97C4E24A26E0491  viTerm_2.8.1_x64-store-setup.exe
+2D65FB3C7CA6EE8C7C06EC6A08D15A454CCB3344EAE62974177A91425AB958C1  viTerm_2.8.1_x64-store-offline-setup.exe
+7EB9602B201D18358A78A52FDD7D299E1187F5C71ED55B163A13DC54B9E4C7A3  viTerm_2.8.1_x64-setup.exe
+6D15663758BBA6AE5D6CFB38687D96C5A679F2A3E1132A68316208D83C07404F  viTerm_2.8.1_x64-setup-light.exe
+E7836E11F31C8646AFEC9F435594A3F891C286D9A2A9C4FA62D6D30CB4BB9963  viTerm_2.8.1_x64_en-US.msi
+466977340A8ECDB5352BE499497D216FEB46B49F8DB143659232406AB2DCB4BB  viTerm_2.8.1_x64-portable.exe
+C98CB9E7F3E09F08A93A71586672D91614B5B47E6564E8B6DA1EAD37209B5226  viterm.exe
+F8E67BFE4DC98A53DA55D741AE5B0A9C896AA62262E3FA477EAA7E7EE6E75DBD  ChuongMinhStudio-CodeSigning.cer
 ```
 
 ### Lệnh kiểm tra trên Windows PowerShell
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\viTerm_2.8.0_x64-setup.exe
-Get-AuthenticodeSignature .\viTerm_2.8.0_x64-setup.exe | Format-List Status, SignerCertificate, TimeStamperCertificate
+Get-FileHash -Algorithm SHA256 .\viTerm_2.8.1_x64-store-setup.exe
+Get-AuthenticodeSignature .\viTerm_2.8.1_x64-store-setup.exe | Format-List Status, SignerCertificate, TimeStamperCertificate
 ```
 
 ---
 
 ## English Summary
 
-**viTerm v2.8.0** (*Chuong Minh Studio Edition*) is a high-performance **SSH, Dual-Pane SFTP, Smart Split-View Terminal, Server Control Center & AI DevOps Workspace** built on **Tauri v2 (Rust)** and **xterm.js**.
+**viTerm v2.8.1** (*Chuong Minh Studio & Microsoft Store Silent Edition*) is a high-performance **SSH, Dual-Pane SFTP, Smart Split-View Terminal, Server Control Center & AI DevOps Workspace** built on **Tauri v2 (Rust)** and **xterm.js**.
 
+- **Microsoft Store Policy 10.2.9.2 Compliant**: Dedicated Store Silent installers (`viTerm_2.8.1_x64-store-setup.exe` & `viTerm_2.8.1_x64-store-offline-setup.exe`) run 100% silently with zero UI dialogs, zero switch requirements, and deterministic Win32 return codes documented in [`INSTALLER_PARAMETERS.md`](INSTALLER_PARAMETERS.md).
 - **Zero-Glitch Windows UX**: Native Win32 Work-Area Fit for borderless windows ensures reliable taskbar minimize/restore on Windows 10/11.
 - **Automatic Terminal IME / Telex / VNI Guard**: Dual-layer native Win32 IME suppression + real-time ASCII reconstruction prevents Vietnamese Telex/VNI input methods from corrupting shell commands.
 - **Local-First Architecture**: Instant startup with persistent local theme/language/vault storage (`AES-256-GCM`); cloud sync automatically triggers only on new devices.
 - **Smart Split Panes (`1x1`, `1x2`, `1+2`, `2x2`) & Full RTL Support**: Add or close individual panes smoothly without interrupting sibling sessions, with pixel-accurate Arabic RTL layout.
-- **Complete Signed Windows Release Suite**: Available as Offline Setup EXE, Light Setup EXE, MSI Installer, Portable SFX EXE, and Standalone EXE — all Authenticode-signed by **Chuong Minh Studio** with DigiCert RFC3161 timestamps.
 
 ---
 
 <div align="center">
-  <p>Developed by <strong>Chuong Minh Studio</strong> | <a href="CHANGELOG.md">Changelog</a> | <a href="SECURITY.md">Security Policy</a> | <a href="https://github.com/chuongminhofficial/viTerm/issues">Report an Issue</a></p>
+  <p>Developed by <strong>Chuong Minh Studio</strong> | <a href="INSTALLER_PARAMETERS.md">Installer Parameters</a> | <a href="CHANGELOG.md">Changelog</a> | <a href="SECURITY.md">Security Policy</a> | <a href="https://github.com/chuongminhofficial/viTerm/issues">Report an Issue</a></p>
 </div>

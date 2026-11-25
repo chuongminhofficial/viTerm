@@ -1,5 +1,18 @@
 # Nhật ký Phát hành (Changelog)
 
+## [2.8.1] — 2026-11-25 (Microsoft Store Silent Edition & Chuong Minh Studio Signed)
+
+### Sửa lỗi Chứng nhận Microsoft Store (Policy 10.2.9.2) & Bộ cài Windows
+- **Khắc phục triệt để lỗi `10.2.9.2 Security - Package Submissions (Win32 products must install silently)`**:
+  - Bổ sung bộ cài chuyên dụng Microsoft Store (`viTerm_2.8.1_x64-store-setup.exe` và `viTerm_2.8.1_x64-store-offline-setup.exe`) tích hợp `SilentInstall silent`, `SilentUninstall silent`, `AutoCloseWindow true` (`src-tauri/windows/store-silent-hooks.nsh`), chạy **100% im lặng (Zero-UI)** ngay cả khi không truyền tham số dòng lệnh hoặc truyền `/S`, `/s`.
+  - Loại bỏ hoàn toàn hộp thoại xác nhận `certutil.exe -user -addstore "Root"` chặn tiến trình cài đặt ngầm và đảm bảo chế độ cài đặt độc lập (Standalone Offline, không tải mạng khi setup).
+  - Bổ sung `"silent": true` cho cấu hình `webviewInstallMode` trong `tauri.conf.json` và chặn hộp thoại `certutil` khi chạy `/S` ở bản cài đặt tiêu chuẩn (`selfsigned-hooks.nsh`).
+- **Ánh xạ đầy đủ Mã trả về Win32 tiêu chuẩn (`EXE return code values`) cho Microsoft Partner Center**:
+  - Hỗ trợ kiểm tra Mutex chống cài trùng tiến trình (`1618`), kiểm tra phiên bản mới hơn đã tồn tại (`1638`), kiểm tra dung lượng ổ đĩa (`112`), kiểm tra quyền ghi/chính sách bảo mật (`1625`), hủy cài đặt (`1602`), yêu cầu khởi động lại (`3010`), lỗi nghiêm trọng (`1603`) và thành công (`0`).
+  - Xuất bản tài liệu chuẩn hóa mã trả về tại [`INSTALLER_PARAMETERS.md`](INSTALLER_PARAMETERS.md).
+
+---
+
 ## [2.8.0] — 2026-11-22 (Chuong Minh Studio Signed Edition)
 
 ### Sửa lỗi & Cải tiến cốt lõi
